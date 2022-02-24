@@ -1,0 +1,392 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+
+
+.container-header{
+  width: 98%;
+  margin-left: 1%;
+}
+
+
+.navbar-brand{
+  position: relative;
+  padding-left: 10%;
+}
+.Uni_name{
+     position: absolute;
+     left: 20%;
+}
+.horizon-navi{
+  position: absolute;
+  height: 10px;
+  background-color: #00ABE1;
+}
+.horizon-navi2{
+  height: 20px;
+  background-color: #00ABE1;
+}
+
+
+/* search bar */
+.search-bar-head{
+  position: absolute;
+  margin-left:80%;
+  width: 200px;
+}
+
+.container-search-bar{
+  padding-bottom: 0px;
+}
+
+.height {
+    height: 0px;
+}
+
+.form-for-s {
+    position: relative;
+}
+
+.form-for-s .fa-search {
+    position: absolute;
+    top: 13px;
+    left: 240px;
+    color: #9ca3af
+}
+
+
+
+.
+.form-input {
+    height: 55px;
+    width: 100px;
+    border-radius: 10px
+}
+
+.form-input:focus {
+    box-shadow: none;
+    border: none
+}
+
+/* hết search bar */
+
+
+.blue-line{
+  height: 7px;
+  background-color: #187bcd;
+  position: relative;
+  top: 5px;
+  z-index: 10000000;
+}
+
+
+/* nav bar */
+.nav-size{
+  width: 100%;
+  background: #464646;
+  height: 45px;
+}
+.nav-size nav{
+  width: 80%;
+}
+nav:after{
+  content: '';
+  clear: both;
+  display: table;
+}
+nav ul{
+  float: right;
+  list-style: none;
+  position: relative;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+
+nav ul li{
+  float: left;
+  display: inline-block;
+  background: #464646;
+}
+nav ul li a{
+  color: white;
+  text-decoration: none;
+  line-height: 33px;
+  padding: 10px 20px;
+  margin-bottom:-12px ;
+}
+
+nav ul li a:hover{
+  color: cyan;
+  border-radius: 5px;
+}
+
+
+nav ul ul{
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 999;
+  transition: .5s;
+}
+
+nav ul li:hover > ul{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+nav ul ul li{
+  position: relative;
+  margin: 0px;
+  width: 250px;
+  float: none;
+  display: list-item;
+  background-color: #464646;
+  left: -32px;
+  top: 21px;
+}
+
+nav ul ul li a{
+  text-align: left;
+}
+
+nav ul ul li a:hover{
+  color: cyan;
+  box-shadow: none;
+}
+
+.show,.icon, input{
+  display: none;
+}
+
+
+.nav-arrow{
+  display: flex;
+  height: 100%;
+  width: auto;
+  border-left: 0.5px solid #808080;
+}
+
+.nav-arrow a{
+  position: relative;
+  top: -10px;
+}
+
+.nav-arrow label{
+  position: relative;
+  right: 40px;
+  top: 6px;
+  color: blue;
+  font-size: 10px;
+}
+
+.right-col-line{
+  border-right: 0.5px solid #808080;
+}
+
+/*responsive */
+
+@media all and (max-width: 1300px){
+
+  /* chỉnh search bar */
+
+  .search-bar-head{
+     margin-left: 0%;
+     top: 110px;
+  }
+  .form-input {
+    height: 30px;
+    text-indent: 25px;
+    border-radius: 4px
+   }
+    .form-for-s .fa-search {
+      position: absolute;
+      top: 8px;
+      left: 240px;
+      }
+ 
+  /*hết chỉnh search bar*/
+
+
+
+
+   /*ten truong */
+   .Uni_name{
+     position: absolute;
+     left: 30%;
+    }
+
+
+  .logo{
+  font-size: 26px;
+  color: #464646;
+}
+
+ 
+
+  .blue-line{
+    display: none;
+  }
+
+  .nav-size{
+  height: auto;
+  padding-bottom: 15px;
+  }
+
+  .nav-arrow{
+    border-left: none;
+  }
+  .right-col-line{
+    border-right: none;
+  }
+
+
+  nav ul{
+    margin-right: 0px;
+    float: left;
+    margin-top: 20px;
+    padding-bottom:20px ;
+  }
+
+
+
+  nav ul li{
+     display: inline-block;
+     background: #464646;
+     border: none;
+  }
+  nav ul li, nav ul ul li{
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul li{
+    top: -35px;
+    left: 6px;
+  }
+
+  nav ul ul{
+    top: 70px;
+    position: static;
+    float: none;
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .show{
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 0px 20px;
+    line-height: 30px;
+    cursor: pointer;
+  }
+
+  .need-color{
+    color: white;
+  }
+  
+  .icon{
+    display: block;
+    color: white;
+    position: absolute;
+    right: 30px;
+    top: 90px;
+    line-height: 70px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+
+  nav ul li a: hover{
+    box-shadow: none;
+
+  }
+
+  .show + a, .nav-size ul{
+    display: none;
+  }
+  
+  [id^=btn]:checked + ul{display: block;}
+}
+
+
+/* phần giao diện trang */
+
+.container-box{
+  width: 84%;
+  margin-left: 8%;
+}
+
+
+.link-tag{
+  width: 100%;
+  padding: 20px 0px 20px 0px;
+}
+
+.link-tag a{
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  padding: 5px;
+}
+
+
+/* tạo mũi tên diều hướng */
+  .arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+
+
+
+/* chỉnh box-mid */
+
+
+
+
+.container-box-mid{
+  display: flex;
+}
+
+
+
+
+.main-content{
+  padding-top: 20px;
+  width: 100%;
+}
+
+.main-left-content{
+  width: 40%;
+}
+
+.main-right-content{
+  width: 10%;
+  height: 200px;
+  background-color: yellow;
+  float: right;
+}
+
+.box-m-right{
+  height: 200px;
+  width: 100%;
+}
+
+.box-m-bottom{
+}
+
+.box-m-bottom .pagination{
+  margin-left: 12%;
+}
+
+
+
+
+
