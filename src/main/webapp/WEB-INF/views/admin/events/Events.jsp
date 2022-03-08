@@ -62,7 +62,7 @@
 					</table>
 						<div class="row">
 		<div class="col-12 d-flex justify-content-center">
-			<div id="paging"></div>
+			<div id="paging1"></div>
 		</div>
 	</div>
 			</div>
@@ -77,7 +77,7 @@
 <jsp:include page="/WEB-INF/views/admin/layout/Footer.jsp"></jsp:include>
 <script type="text/javascript">
 			$(document).ready(function() {
-				$("#paging").pagination({
+				$("#paging1").pagination({
 					currentPage: ${eventsSearch.currentPage},
 			        items: ${eventsSearch.totalItems},
 			        itemsOnPage: 5,

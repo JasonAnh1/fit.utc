@@ -73,4 +73,13 @@ public class EventsController extends BaseController {
 		return "admin/events/UpdateEvents";
 
 	}
+	@RequestMapping(value = {"admin/deleteEvents"},method = RequestMethod.GET )
+	private String post_delete(final Model model,final HttpServletRequest request,
+							   final HttpServletResponse response) throws IOException {
+		Integer id = Integer.parseInt(request.getParameter("id"));
+		eventsService.deleteById(id);
+		response.sendRedirect("listEvents");
+		return "admin/events/Events";
+	}
+
 }

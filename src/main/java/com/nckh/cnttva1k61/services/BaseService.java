@@ -69,7 +69,7 @@ private static int SIZE_OF_PAGE = 5;
 	/**
 	 * thực thi câu lệnh truy vấn cơ sở dữ liệu và trả về duy nhất 1 kết quả
 	 * @param sql -> ví dụ chạy câu lệnh [SELECT * FROM tbl_category WHERE name='Java';]
-	 * @param page
+//	 * @param page
 	 * @return
 	 */
 	public E getByTransactQuerySQL(String sql) {

@@ -23,13 +23,7 @@ public class ListNewsController extends BaseController {
 	public String get_listNews(final Model model, final HttpServletRequest request, final HttpServletResponse response)
 
 	{
-		/*
-		 * List<Product> list = productService.findAll(); model.addAttribute("Product",
-		 * list);
-		 */
-////lay keyword
 		String keyword = request.getParameter("keyword");
-
 		NewsSearchModel newsSearchModel = new NewsSearchModel();
 		newsSearchModel.keyword = keyword;
 		newsSearchModel.page = getCurrentPage(request);

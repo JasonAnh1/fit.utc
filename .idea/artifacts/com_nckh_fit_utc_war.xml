@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="com.nckh.fit.utc:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>com.nckh.fit.utc</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="com.nckh.fit.utc.war">
+      <element id="artifact" artifact-name="com.nckh.fit.utc:war exploded" />
+    </root>
+  </artifact>
+</component>
