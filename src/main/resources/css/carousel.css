@@ -1,0 +1,35 @@
+@-webkit-keyframes zoom {
+    from {
+      -webkit-transform: scale(1,1);
+    }
+    to {
+      -webkit-transform: scale(1.5,1.5);
+    }
+}
+
+/* Standard syntax */
+@keyframes zoom {
+   from {
+        transform: scale(1,1);
+   }
+   to {
+        transform: scale(1.5,1.5);
+   }
+}
+
+.carousel-inner .carousel-item img{
+  height: 400px;
+  -webkit-animation: zoom 50s; /* Chrome, Safari, Opera */
+  animation: zoom 50s;
+}
+
+.carousel-caption-css{
+  z-index: 100;
+  position: absolute;
+  top: 15%;
+  background: rgba(15, 147, 204, 0.46);
+  width: 15%;
+  height: 70%;
+  border-radius: 5px;
+
+

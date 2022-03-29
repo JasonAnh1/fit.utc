@@ -16,7 +16,7 @@
     <div class="row">
         <jsp:include page="/WEB-INF/views/admin/layout/sideBar.jsp"></jsp:include>
         <div class="col-9">
-            <div class="h3 mt-5">Quản lý danh mục</div>
+            <div class="h3 mt-5">Quản lý biểu mẫu</div>
 
             <form action="${base}/admin/listForms" method="get">
                 <div class="input-group rounded w-25">

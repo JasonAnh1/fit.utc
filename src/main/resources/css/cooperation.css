@@ -1,0 +1,17 @@
+.cooperation{
+  background-image: url(../../../../../../frontend_nckh/fit-utc/main-page/img/slide1.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.cooperation-title{
+  text-align: center;
+  padding-top: 20px;
+  color: white;
+}
+.cooperation .admission-container{
+  width: 80%;
+  margin-left: 10%;
+}
+.cooperation-title p h5{
+  padding: 2% 20% 0% 20%;
+}

@@ -7,18 +7,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="/WEB-INF/views/user/layout/DetailLayout.jsp"></jsp:include>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+
+<!-- link to CSS -->
+<link rel="stylesheet" type="text/css" href="${base}/css/header.css">
+<link rel="stylesheet" type="text/css"
+	href="${base}/css/navbar-dropdown.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/baiviet.css">
+<!-- link to font awsome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<title>Detail</title>
 
 </head>
-<body >
-	<jsp:include page="/WEB-INF/views/user/layout/DetailNav.jsp"></jsp:include>
+<body>
+	<jsp:include page="/WEB-INF/views/user/layout/NavBar.jsp"></jsp:include>
+
+	<!-- thẻ chứa toàn bộ content -->
 	<div class="container-content">
 		<!-- thẻ tag -->
 		<div class="link-tag">
-			<a href="${base}/image/LogoUTC.jpg">Trang chủ<i
-				class="arrow right"></i></a> <a href="#">${categories4.name}<i
-				class="arrow right"></i></a> <a href="#">${categories2.name}</i></a>
+			<a href="${base}/index">Trang chủ<i class="arrow right"></i></a> 
+			<a href="#">${categories2.name}<i class="arrow right"></i></a>
+            <a href="#">${categories4.name}<i class="arrow right"></i></a>
 		</div>
+
 		<div class="container-left-right">
 			<!-- content trái -->
 			<div class="left-content">
@@ -27,23 +56,20 @@
 					<div class="left-content-up-text">
 						<h3>${news.title}</h3>
 						<div class="blue-line-m"></div>
-						<p style="text-align: left; font-size: 12px;">Cập nhật lần
-							cuối: ${news.createdDate}</p>
+						<p style="font-size: 20px;">Cập nhật lần cuối:
+							${news.createdDate}</p>
 						<p>Đăng bởi: ${news.createdBy}</p>
-						<p>${news.shortDes}</p>
-
 					</div>
-					8
 				</div>
 
 				<div class="left-content-middle">
 					<p>${news.details}</p>
-
-					<c:forEach items="${news.newsImages}" var="img">
-
-						<a href="${base}/uploads/${img.path}" download>tải file
-							${img.title}</a>
+					<c:forEach items="${news.newsImages}" var="file" step="2">
+						<a href="${base}/uploads/${file.path}" download><i
+							class="fa-solid fa-download"></i> ${file.title}</a>
 					</c:forEach>
+
+					<hr>
 				</div>
 				<div class="left-content-down">
 					<!-- Facebook -->
@@ -74,28 +100,34 @@
 
 			<!-- content phải -->
 			<div class="right-content">
-				<div class="right-content-event">
-					<h3>Sự kiện mới nhất</h3>
-					<div class="blue-line-m"></div>
-					<ul>
-						<c:forEach items="${listEvents.data}" var="Events">
-							<li><a href="#">${Events.title}</a></li>
-						</c:forEach>
-					</ul>
-				</div>
+
 				<div class="right-content-event">
 					<h3>Bài viết mới nhất</h3>
 					<div class="blue-line-m"></div>
 					<ul>
-						<c:forEach items="${fourNews.data}" var="News">
-							<li><a href="${base }/detail/${News.seo}">${News.title}</a></li>
-							<hr>
+						<c:forEach items="${fourNews.data}" var="o">
+						
+							<li><a href="${base}/detail/${o.seo}" class="link-to-go">${o.title}</a></li>
+					
 						</c:forEach>
+
+						<hr>
+					</ul>
+				</div>
+				<div class="right-content-event">
+					<h3>Tin tức mới nhất</h3>
+					<div class="blue-line-m"></div>
+					<ul>
+						<c:forEach items="${listEvents.data}" var="o">
+						
+							<li><a href="${base}/detailE/${o.seo}" class="link-to-go">${o.title}</a></li>
+					
+						</c:forEach>
+
+						<hr>
 					</ul>
 				</div>
 			</div>
 		</div>
 	</div>
-</body>
-<jsp:include page="/WEB-INF/views/user/layout/Footer.jsp"></jsp:include>
 </html>

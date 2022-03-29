@@ -1,8 +1,6 @@
 package com.nckh.cnttva1k61.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tbl_lecturers")
@@ -25,6 +23,18 @@ public class Lecturers extends BaseEntity {
     private String avatar;
     @Column(name = "faculty", length = 200, nullable = true)
     private String faculty;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "department_id")
+    private Department department;
+
+    public Department getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(Department department) {
+        this.department = department;
+    }
 
     public String getFaculty() {
         return faculty;

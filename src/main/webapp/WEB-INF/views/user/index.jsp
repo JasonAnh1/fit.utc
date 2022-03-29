@@ -7,598 +7,380 @@
 <!DOCTYPE html>
 <html>
 <head>
-<jsp:include page="/WEB-INF/views/user/layout/Head.jsp"></jsp:include>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<style type="text/css">
+<!-- Bootstrap CSS -->
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+	crossorigin="anonymous">
+
+<!-- link to CSS -->
+<link rel="stylesheet" type="text/css" href="${base}/css/header.css">
+<link rel="stylesheet" type="text/css"
+	href="${base}/css/navbar-dropdown.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/carousel.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/news.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/events.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/admission.css">
+<link rel="stylesheet" type="text/css"
+	href="${base}/css/cooperation.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/alumni.css">
+<link rel="stylesheet" type="text/css"
+	href="${base}/css/people-said.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/sponsor.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/about-us.css">
+<link rel="stylesheet" type="text/css" href="${base}/css/footer.css">
+<%--   background--%>
+<style>
 .event-news {
 	padding: 10px;
 	height: 500px;
-	background-image: url(${base}/image/background-swiper.png);
+	background-image: url('${base}/image/background-swiper.png');
 }
 
 .cooperation {
-	background-image:
-		url(${base}/image/abstract-technology-banner-with-blue-orange-lights_1017-25544.jpg);
+	background-image: url('${base}/image/slide1.jpg');
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 }
-
-.admission-container {
-	width: 80%;
-	margin-left: 10%;
-	text-align: center;
-}
-
-a {
-	text-decoration: none;
-	list-style-type: none;
-}
-
-.event-news a {
-	color: black;
-}
-
-.event-news a:hover {
-	color: gray;
-}
 </style>
+<!-- link to font awsome -->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet"
+	href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<title>Home</title>
 
 </head>
 <body>
 	<jsp:include page="/WEB-INF/views/user/layout/NavBar.jsp"></jsp:include>
 
-	<!-- Carousel -->
-	<div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-		<!-- Indicators/dots -->
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-bs-ride="carousel">
 		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#demo" data-bs-slide-to="0"
-				class="active"></button>
-			<button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-			<button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-		</div>
+			<button type="button" data-bs-target="#carouselExampleIndicators"
+				data-bs-slide-to="0" class="active" aria-current="true"
+				aria-label="Slide 1"></button>
+			<c:forEach items="${fourBanner.data}" var="o" varStatus="loop"
+				begin="1">
+				<button type="button" data-bs-target="#carouselExampleIndicators"
+					data-bs-slide-to="${loop.count}" aria-label="Slide 2"></button>
+			</c:forEach>
 
-		<!-- The slideshow/carousel -->
+		</div>
 		<div class="carousel-inner">
-			<c:forEach items="${fourBanner.data}" var="Banner" begin="0" end="0">
-				<div class="carousel-item active carousel-item-css">
-					<img src="${base}/uploads/${Banner.avatar}"
-						class="d-block w-100 carousel-img">
+			<c:forEach items="${fourBanner.data}" var="o" varStatus="loop"
+				begin="0" end="0">
+				<div class="carousel-item active">
+					<img src="${base}/uploads/${o.avatar}" class="d-block w-100"
+						alt="...">
 					<div class="carousel-caption carousel-caption-css">
-						<h3>Chao mung ban den voi UTC</h3>
-						<p>FIT UTC Tiền thân của Khoa Công nghệ Thông tin (CNTT) là Bộ
-							môn Tin học, được thành lập từ đầu những năm 1988, chịu trách
-							nhiệm giảng dạy các môn Tin học cho các chuyên ngành trong toàn
-							Trường.</p>
-						<div class="btn  btn-outline-primary ">xem thêm</div>
+						<h3>${o.title}</h3>
+						<p>${o.shortDes}</p>
+						<a href=${base}/DetailBanner?cid=${o.id}><div
+								class="btn  btn-outline-primary ">xem thêm</div></a>
 					</div>
-					<!-- blueline -->
-					<div class="horizon-navi"></div>
 				</div>
 			</c:forEach>
-			<c:forEach items="${fourBanner.data}" var="Banner" begin="1" end="3">
+			<c:forEach items="${fourBanner.data}" var="o" varStatus="loop"
+				begin="1">
 				<div class="carousel-item">
-					<img src="${base}/uploads/${Banner.avatar}"
-						class="d-block w-100 carousel-img">
+					<img src="${base}/uploads/${o.avatar}" class="d-block w-100"
+						alt="...">
 					<div class="carousel-caption carousel-caption-css">
-						<h3>Chao mung ban den voi UTC</h3>
-						<p>FIT UTC Tiền thân của Khoa Công nghệ Thông tin (CNTT) là Bộ
-							môn Tin học, được thành lập từ đầu những năm 1988, chịu trách
-							nhiệm giảng dạy các môn Tin học cho các chuyên ngành trong toàn
-							Trường.</p>
-						<div class="btn  btn-outline-primary ">xem thêm</div>
+						<h3>${o.title}</h3>
+						<p>${o.shortDes}</p>
+						<a href="${base}/DetailBanner?cid=${o.id}">
+							<div class="btn  btn-outline-primary ">xem thêm</div>
+						</a>
 					</div>
-					<!-- blueline -->
-					<div class="horizon-navi"></div>
-
 				</div>
 			</c:forEach>
 		</div>
-
-		<!-- Left and right controls/icons -->
 		<button class="carousel-control-prev" type="button"
-			data-bs-target="#demo" data-bs-slide="prev">
-			<span class="carousel-control-prev-icon"></span>
+			data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Previous</span>
 		</button>
 		<button class="carousel-control-next" type="button"
-			data-bs-target="#demo" data-bs-slide="next">
-			<span class="carousel-control-next-icon"></span>
+			data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span> <span
+				class="visually-hidden">Next</span>
 		</button>
+
 	</div>
+
+
+
+
 
 	<div class="news">
 		<h3 class="text-center pt-5">TIN MỚI NHẤT</h3>
-		<!--   cards system -->
-		<div class="container mt-5">
-			<div class="row">
-				<c:forEach items="${fourNews.data}" var="News">
-					<div class="col-md-3">
+		<div class="row container-news">
+			<c:forEach items="${fourNews.data}" var="o">
+				<div class="col-md-3">
+					<a href="${base}/detail/${o.seo}" class="link-to-go">
 						<div class="card-news-bag">
-							<a href="${base }/detail/${News.seo}"> <img
-								src="${base}/uploads/${News.avatar}" class="card-news" alt="..."></a>
-							<h5 class="card-title">${News.title}</h5>
-							<p class="card-text">${News.shortDes}</p>
-
+							<img src="${base}/uploads/${o.avatar}" class="card-news"
+								alt="...">
+							<h5 class="card-title">${o.title}</h5>
+							<p class="card-text">${o.shortDes}</p>
 						</div>
-					</div>
-				</c:forEach>
-			</div>
+					</a>
+				</div>
+			</c:forEach>
 		</div>
-	</div>
 
-	<!-- slide card -->
-
-
-	<!--more information -->
-	<div class="more-info">
-		<a href="${base}/news"><h5
-				style="text-align: center; color: white;">Xem thêm tin tức</h5></a>
-	</div>
+		<div class="more-info">
+			<h5 style="text-align: center; color: white;">
+				<a href="${base}/news" class="link-to-go">Xem thêm tin tức</a>
+			</h5>
+		</div>
 
 
-
-	<!-- Swiper JS -->
-	<div class="event-news">
-		<h2 class="event-news-title">Sự kiện mới nhất</h2>
-		<div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-				<c:forEach items="${listEvents.data}" var="Events">
-					<div class="swiper-slide">
-						<a href="${base}/detailE/${Events.seo}">
-							<div class="event-img">
-								<img src="${base}/uploads/${Events.avatar}">
-							</div>
-							<div class="calender-event">
-								<h1>${Events.day}</h1>
-								<h3>TH ${Events.month}</h3>
-							</div>
-							<div class="calender-event-info">
-								<h2>${Events.title}</h2>
-								<div class="calender-event-info-p">
-									<p>Thời gian:${Events.hour}:${Events.minutes} PM</p>
-									<p>Địa điểm:${Events.address}</p>
+		<!-- Swiper JS -->
+		<div class="event-news">
+			<h2 class="event-news-title">Sự kiện mới nhất</h2>
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<c:forEach items="${listEvents.data}" var="o">
+						<div class="swiper-slide">
+							<a href="${base}/detailE/${o.seo}" class="link-to-go">
+								<div class="event-img">
+									<img src="${base}/uploads/${o.avatar}">
 								</div>
-							</div>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-pagination"></div>
-		</div>
-	</div>
-
-	<div class="more-info">
-		<a href="${base}/ListEvents"><h5
-				style="text-align: center; color: white;">Xem thêm sự kiện</h5></a>
-	</div>
-
-	<div class="admission-and-educate">
-		<div class="admission-and-educate-title">
-			<h2>ĐÀO TẠO – TUYỂN SINH</h2>
-			<p>Năm 2020, Tổ chức Giáo dục Quacquarelli Symonds (viết tắt QS –
-				Vương quốc Anh) đã đánh giá và xếp chất lượng đào tạo và nghiên cứu
-				của ĐHBK Hà Nội trong các lĩnh vực mà Trường đang đảm nhận thuộc
-				nhóm hạng từ 451 đến 500 trên toàn Thế giới, tiếp tục giữ vị trí số
-				1 tại Việt Nam.</p>
-		</div>
-		<div class="admission-container">
-			<div class="row">
-				<c:forEach items="${twoEdu.data}" var="Edu">
-					<div class="col-md-6">
-					<a  href="${base }/detail/${Edu.seo}" style="color: black;">
-						<figure class="admission-and-educate-img">
-							<img src="${base}/uploads/${Edu.avatar}">
-							<div>
-								<h5>${Edu.title}</h5>
-								<p>${Edu.shortDes}</p>
-							</div>
-							
-						</figure>
-						</a>
-					</div>
-				</c:forEach>
-			</div>
-		</div>
-	</div>
-
-
-	<div class="cooperation">
-		<div class="cooperation-title">
-			<h2>HỢP TÁC – ĐỐI NGOẠI</h2>
-			<p>Năm 2020, Tổ chức Giáo dục Quacquarelli Symonds (viết tắt QS –
-				Vương quốc Anh) đã đánh giá và xếp chất lượng đào tạo và nghiên cứu
-				của ĐHBK Hà Nội trong các lĩnh vực mà Trường đang đảm nhận thuộc
-				nhóm hạng từ 451 đến 500 trên toàn Thế giới, tiếp tục giữ vị trí số
-				1 tại Việt Nam.</p>
-		</div>
-		<div class="admission-container">
-			<div class="row">
-				<c:forEach items="${twoContact.data}" var="Con">
-					<div class="col-md-6">
-					<a  href="${base }/detail/${Con.seo}" style="color: black;">
-						<figure class="admission-and-educate-img">
-							<img src="${base}/uploads/${Con.avatar}" class="img-fluid"
-								alt="Responsive image">
-							<div>
-								<h5>${Con.title}</h5>
-								<p>${Con.shortDes}</p>
-							</div>
-						</figure>
-						</a>
-					</div>
-				</c:forEach>
+								<div class="calender-event">
+									<h1>${o.day}</h1>
+									<h3>TH ${o.month}</h3>
+								</div>
+								<div class="calender-event-info">
+									<h2>${o.title}</h2>
+									<div class="calender-event-info-p">
+										<p>thời gian: ${o.hour}:${o.minutes} PM</p>
+										<p>địa điểm: ${o.address}</p>
+									</div>
+								</div>
+							</a>
+						</div>
+					</c:forEach>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-pagination"></div>
 			</div>
 		</div>
 
+		<div class="more-info">
+			<h5 style="text-align: center; color: white;">
+				<a href="${base}/ListEvents" class="link-to-go">Xem thêm sự
+					kiện</a>
+			</h5>
+		</div>
 
-	</div>
-
-
-
-	<!--cuu sinh vien -->
-
-	<div class="alumni">
-		<h1>Cựu Sinh Viên</h1>
-		<div class="swiper mySwiper">
-			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<div class="event-img">
-						<img src="../img/cuu-sv-1.jpg">
-					</div>
-					<div class="alumni-tag">
-						<p>cựu sinh viên</p>
-					</div>
-					<div class="alumni-line"></div>
-
-					<div class="alumni-text">
-						<h5>Nguyễn Hồng Trường - ukii</h5>
-						<p>okoke</p>
-					</div>
-				</div>
-
-
-				<div class="swiper-slide">
-					<div class="event-img">
-						<img src="../img/cuu-sv-1.jpg">
-					</div>
-					<div class="alumni-tag">
-						<p>cựu sinh viên</p>
-					</div>
-					<div class="alumni-line"></div>
-
-					<div class="alumni-text">
-						<h5>Nguyễn Hồng Trường - ukii</h5>
-						<p>okoke</p>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="event-img">
-						<img src="../img/cuu-sv-1.jpg">
-					</div>
-					<div class="alumni-tag">
-						<p>cựu sinh viên</p>
-					</div>
-					<div class="alumni-line"></div>
-
-					<div class="alumni-text">
-						<h5>Nguyễn Hồng Trường - ukii</h5>
-						<p>okoke</p>
-					</div>
-				</div>
-				<div class="swiper-slide">
-					<div class="event-img">
-						<img src="../img/cuu-sv-1.jpg">
-					</div>
-					<div class="alumni-tag">
-						<p>cựu sinh viên</p>
-					</div>
-					<div class="alumni-line"></div>
-
-					<div class="alumni-text">
-						<h5>Nguyễn Hồng Trường - ukii</h5>
-						<p>okoke</p>
-					</div>
+		<div class="admission-and-educate">
+			<div class="admission-and-educate-title">
+				<h2>ĐÀO TẠO – TUYỂN SINH</h2>
+				<p></p>
+			</div>
+			<div class="admission-container">
+				<div class="row">
+					<c:forEach items="${twoEdu.data}" var="o">
+						<div class="col-md-6">
+							<figure class="admission-and-educate-img">
+								<img src="${base}/uploads/${o.avatar}">
+								<a href="${base}/detail/${o.seo}" class="link-to-go">
+									<div>
+										<h5>${o.title}</h5>
+										<p>${o.shortDes}</p>
+									</div>
+								</a>
+							</figure>
+						</div>
+					</c:forEach>
 				</div>
 			</div>
+		</div>
+
+		<div class="cooperation">
+			<div class="cooperation-title">
+				<h2>HỢP TÁC – ĐỐI NGOẠI</h2>
+				<p></p>
+			</div>
+			<div class="admission-container">
+				<div class="row">
+					<c:forEach items="${twoContact.data}" var="o">
+						<div class="col-md-6">
+							<figure class="admission-and-educate-img">
+								<img src="${base}/uploads/${o.avatar}" class="img-fluid"
+									alt="Responsive image">
+								<a href="${base}/detail/${o.seo}" class="link-to-go">
+									<div>
+										<h5>${o.title}</h5>
+										<p>${o.shortDes}</p>
+									</div>
+								</a>
+							</figure>
+						</div>
+					</c:forEach>
+
+				</div>
+			</div>
+
 
 		</div>
 
 
-		<!-- scroll bar in box -->
+		<div class="alumni">
+			<h1>Cựu Sinh Viên</h1>
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<c:forEach items="${oldStudent.data}" var="o">
+						<div class="swiper-slide">
+							<a href="#" class="link-to-go">
+								<div class="event-img">
+									<img src="${base}/uploads/${o.avatar}">
+								</div>
+								<div class="alumni-tag">
+									<p>cựu sinh viên</p>
+								</div>
+								<div class="alumni-line"></div>
+
+								<div class="alumni-text">
+									<h5>${o.title}</h5>
+									<p>${o.shortDes}</p>
+								</div>
+							</a>
+						</div>
+					</c:forEach>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-pagination"></div>
+
+			</div>
+		</div>
+
 
 
 		<div class="people-said">
-			<h1>Nói về SoUTC</h1>
+			<h1>Nói về UTC</h1>
 			<div class="swiper mySwiper-1">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide">
-						<div class="so-scroll-bag">
-							<div class="row">
-								<div class="col-md-3">
-									<div class="so-img-bag">
-										<img src="../img/josh.png">
-										<div class="so-img-line rounded"></div>
+					<c:forEach items="${about.data}" var="o">
+
+						<div class="swiper-slide">
+							<div class="so-scroll-bag">
+								<div class="row">
+									<div class="col-md-3">
+										<div class="so-img-bag">
+											<img src="${base}/uploads/${o.avatar}">
+											<div class="so-img-line rounded"></div>
+										</div>
+									</div>
+									<div class="col-md-9">
+										<div class="so-scroll-div">
+											<div class="so-scroll-object">${o.detail}</div>
+										</div>
 									</div>
 								</div>
-								<div class="col-md-9">
-									<div class="so-scroll-div">
-										<div class="so-scroll-object">Nhưng bất kể những lý do
-											ấy, cách thức Amazon chi đậm cho mùa đầu tiên của Chúa tể của
-											những chiếc nhẫn cũng thực sự gây kinh ngạc. Với khoảng 465
-											triệu USD chi ra chỉ riêng cho mùa đầu tiên, công ty của tỉ
-											phú Jeff Bezos gần như chắc chắn biến loạt series 5 mùa này
-											thành một siêu phẩm tỉ đô, AV Club nhận định. Tờ báo giải trí
-											trực tuyến của Mỹ lấy ví dụ về Game of Thrones (Trò chơi
-											vương quyền) để so sánh mức độ điên rồ của Amazon trong dự án
-											lần này. Theo đó, Chúa tể của những chiếc nhẫn đang mô phỏng
-											Trò chơi vương quyền trên truyền hình. Theo tính toán, kể cả
-											khi ném tiền vào hàng loạt cảnh chiến đấu và lâu đài hoành
-											tráng trong mùa cuối, Trò chơi vương quyền cũng chỉ "ngốn"
-											khoảng 15 triệu USD mỗi tập. Nói cách khác, ở mức độ bạo chi
-											như hiện nay, Amazon có thể làm thêm 31 tập Trò chơi vương
-											quyền tương ứng. Theo Hollywood Reporter, số tiền khổng lồ
-											trên có thể đã cộng gộp luôn một lượng chi phí đáng kể 250
-											triệu USD cho Tolkien Estate, đơn vị quản lý tài sản của nhà
-											văn J. R. R. Tolkien, cũng như chi phí khởi động cho dự án
-											phim lần này. Nhưng kể cả khi như vậy, số tiền dành cho mùa
-											đầu tiên Chúa tể của những chiếc nhẫn vẫn thực sự gây kinh
-											ngạc đối với dư luận. Theo Hollywood Reporter, số tiền khổng
-											lồ trên có thể đã cộng gộp luôn một lượng chi phí đáng kể 250
-											triệu USD cho Tolkien Estate, đơn vị quản lý tài sản của nhà
-											văn J. R. R. Tolkien, cũng như chi phí khởi động cho dự án
-											phim lần này. Nhưng kể cả khi như vậy, số tiền dành cho mùa
-											đầu tiên Chúa tể của những chiếc nhẫn vẫn thực sự gây kinh
-											ngạc đối với dư luận.</div>
-									</div>
+								<div class="so-info-name">
+									<h6>${o.name}</h6>
+									<p>${o.des}</p>
 								</div>
-							</div>
-							<div class="so-info-name">
-								<h6>josh-china</h6>
-								<p>okeoke</p>
 							</div>
 						</div>
-					</div>
+					</c:forEach>
 
-					<div class="swiper-slide">
-						<div class="so-scroll-bag">
-							<div class="row">
-								<div class="col-md-3">
-									<div class="so-img-bag">
-										<img src="../img/josh.png">
-										<div class="so-img-line rounded"></div>
-									</div>
-								</div>
-								<div class="col-md-9">
-									<div class="so-scroll-div">
-										<div class="so-scroll-object">Nhưng bất kể những lý do
-											ấy, cách thức Amazon chi đậm cho mùa đầu tiên của Chúa tể của
-											những chiếc nhẫn cũng thực sự gây kinh ngạc. Với khoảng 465
-											triệu USD chi ra chỉ riêng cho mùa đầu tiên, công ty của tỉ
-											phú Jeff Bezos gần như chắc chắn biến loạt series 5 mùa này
-											thành một siêu phẩm tỉ đô, AV Club nhận định. Tờ báo giải trí
-											trực tuyến của Mỹ lấy ví dụ về Game of Thrones (Trò chơi
-											vương quyền) để so sánh mức độ điên rồ của Amazon trong dự án
-											lần này. Theo đó, Chúa tể của những chiếc nhẫn đang mô phỏng
-											Trò chơi vương quyền trên truyền hình. Theo tính toán, kể cả
-											khi ném tiền vào hàng loạt cảnh chiến đấu và lâu đài hoành
-											tráng trong mùa cuối, Trò chơi vương quyền cũng chỉ "ngốn"
-											khoảng 15 triệu USD mỗi tập. Nói cách khác, ở mức độ bạo chi
-											như hiện nay, Amazon có thể làm thêm 31 tập Trò chơi vương
-											quyền tương ứng. Theo Hollywood Reporter, số tiền khổng lồ
-											trên có thể đã cộng gộp luôn một lượng chi phí đáng kể 250
-											triệu USD cho Tolkien Estate, đơn vị quản lý tài sản của nhà
-											văn J. R. R. Tolkien, cũng như chi phí khởi động cho dự án
-											phim lần này. Nhưng kể cả khi như vậy, số tiền dành cho mùa
-											đầu tiên Chúa tể của những chiếc nhẫn vẫn thực sự gây kinh
-											ngạc đối với dư luận. Theo Hollywood Reporter, số tiền khổng
-											lồ trên có thể đã cộng gộp luôn một lượng chi phí đáng kể 250
-											triệu USD cho Tolkien Estate, đơn vị quản lý tài sản của nhà
-											văn J. R. R. Tolkien, cũng như chi phí khởi động cho dự án
-											phim lần này. Nhưng kể cả khi như vậy, số tiền dành cho mùa
-											đầu tiên Chúa tể của những chiếc nhẫn vẫn thực sự gây kinh
-											ngạc đối với dư luận.</div>
-									</div>
-								</div>
-							</div>
-							<div class="so-info-name">
-								<h6>josh-china</h6>
-								<p>okeoke</p>
-							</div>
-						</div>
-					</div>
-
-
-					<div class="swiper-slide">
-						<div class="so-scroll-bag">
-							<div class="row">
-								<div class="col-md-3">
-									<div class="so-img-bag">
-										<img src="../img/josh.png">
-										<div class="so-img-line rounded"></div>
-									</div>
-								</div>
-								<div class="col-md-9">
-									<div class="so-scroll-div">
-										<div class="so-scroll-object">Nhưng bất kể những lý do
-											ấy, cách thức Amazon chi đậm cho mùa đầu tiên của Chúa tể của
-											những chiếc nhẫn cũng thực sự gây kinh ngạc. Với khoảng 465
-											triệu USD chi ra chỉ riêng cho mùa đầu tiên, công ty của tỉ
-											phú Jeff Bezos gần như chắc chắn biến loạt series 5 mùa này
-											thành một siêu phẩm tỉ đô, AV Club nhận định. Tờ báo giải trí
-											trực tuyến của Mỹ lấy ví dụ về Game of Thrones (Trò chơi
-											vương quyền) để so sánh mức độ điên rồ của Amazon trong dự án
-											lần này. Theo đó, Chúa tể của những chiếc nhẫn đang mô phỏng
-											Trò chơi vương quyền trên truyền hình. Theo tính toán, kể cả
-											khi ném tiền vào hàng loạt cảnh chiến đấu và lâu đài hoành
-											tráng trong mùa cuối, Trò chơi vương quyền cũng chỉ "ngốn"
-											khoảng 15 triệu USD mỗi tập. Nói cách khác, ở mức độ bạo chi
-											như hiện nay, Amazon có thể làm thêm 31 tập Trò chơi vương
-											quyền tương ứng. Theo Hollywood Reporter, số tiền khổng lồ
-											trên có thể đã cộng gộp luôn một lượng chi phí đáng kể 250
-											triệu USD cho Tolkien Estate, đơn vị quản lý tài sản của nhà
-											văn J. R. R. Tolkien, cũng như chi phí khởi động cho dự án
-											phim lần này. Nhưng kể cả khi như vậy, số tiền dành cho mùa
-											đầu tiên Chúa tể của những chiếc nhẫn vẫn thực sự gây kinh
-											ngạc đối với dư luận. Theo Hollywood Reporter, số tiền khổng
-											lồ trên có thể đã cộng gộp luôn một lượng chi phí đáng kể 250
-											triệu USD cho Tolkien Estate, đơn vị quản lý tài sản của nhà
-											văn J. R. R. Tolkien, cũng như chi phí khởi động cho dự án
-											phim lần này. Nhưng kể cả khi như vậy, số tiền dành cho mùa
-											đầu tiên Chúa tể của những chiếc nhẫn vẫn thực sự gây kinh
-											ngạc đối với dư luận.</div>
-									</div>
-								</div>
-							</div>
-							<div class="so-info-name">
-								<h6>josh-china</h6>
-								<p>okeoke</p>
-							</div>
-						</div>
-					</div>
 				</div>
 
 			</div>
+
 
 			<div class="about-us">
 				<h1>VỀ CHÚNG TÔI</h1>
 				<div class="about-us-bag">
 					<div class="row">
-						<div class="col-md-2 about-us-bag-el">
-							<p class="size-text">QS-Ranking</p>
-							<h1>000-500</h1>
-							<p>trên Thế giới trong nhóm ngành Khoa học Máy tính và Hệ
-								thống Thông tin</p>
-						</div>
-						<div class="col-md-2 about-us-bag-el">
-							<p class="size-text">Sinh Viên thuộc TOP</p>
-							<h1>1%</h1>
-							<p>Điểm cao khối A toàn quốc mùa tuyển sinh 2019</p>
-						</div>
-						<div class="col-md-2 about-us-bag-el">
-							<p class="size-text">Sinh viên</p>
-							<h1>4000+</h1>
-							<p></p>
-						</div>
-						<div class="col-md-2 about-us-bag-el">
-							<p class="size-text">Chương trình đào tạo</p>
-							<h1>17+</h1>
-							<p>thuộc các hệ đào tạo cử nhân, kỹ sư, thạc sỹ khoa học,
-								tiến sỹ</p>
-						</div>
-						<div class="col-md-2 about-us-bag-el">
-							<p class="size-text">Đối tác</p>
-							<h1>200+</h1>
-							<p>các trường đại học, viện nghiên cứu, tập đoàn, công ty
-								trong nước và quốc tế</p>
-						</div>
+						<c:forEach items="${statistic.data}" var="o">
+							<div class="col-md-2 about-us-bag-el">
+								<p class="size-text">${o.name}</p>
+								<h1>${o.data}</h1>
+								<p>${o.description}</p>
+							</div>
+						</c:forEach>
 					</div>
 
 				</div>
-
-
 			</div>
 
 
 
 
+			<footer class="footer">
+				<div class="container-f">
+					<div class="row-f">
+						<div class="footer-col">
+							<h4>bộ môn- trung tâm</h4>
+							<ul>
+								<li><a href="#">bộ môn công nghệ phần mềm</a></li>
+								<li><a href="#">bộ môn hệ thống thông tin</a></li>
+								<li><a href="#">bộ môn khoa học máy tính</a></li>
+								<li><a href="#">bộ môn kỹ thuật máy tính</a></li>
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>chương trình đào tạo</h4>
+							<ul>
+								<li><a href="#">trường trình đạo tạo cử nhân</a></li>
+								<li><a href="#">trường trình đạo tạo việt anh</a></li>
+								<li><a href="#">trường trình đạo tạo thạc sĩ</a></li>
+								<li><a href="#">trường trình đạo tạo tiến sĩ</a></li>
+								<li><a href="#">trường trình đạo tạo ngắn hạn</a></li>
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>hệ thống và quản lí tài nguyên</h4>
+							<ul>
+								<li><a href="#">hệ thống quản lý đào tạo</a></li>
+								<li><a href="#">Hệ thống quản lí hợp tác doanh nghiệp</a></li>
+								<li><a href="#">các biểu mẫu dành cho sinh viên</a></li>
+							</ul>
+						</div>
+						<div class="footer-col">
+							<h4>utc.edu.vn</h4>
+							<div class="social-links">
+								<a href="#"><i class="fab fa-facebook-f"></i></a> <a href="#"><i
+									class="fab fa-twitter"></i></a> <a href="#"><i
+									class="fab fa-instagram"></i></a> <a href="#"><i
+									class="fab fa-linkedin-in"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
 
 
 
+			</footer>
 
+			<div class="sponsor row">
+				<div class="sponsor-title">
+					<h1></h1>
+				</div>
+				<c:forEach items="${logoSponsor.data}" var="o">
+					<div class="col-2">
+						<img src="${base}/uploads/${o.avatar}">
+					</div>
+				</c:forEach>
 
-			<jsp:include page="/WEB-INF/views/user/layout/InfoBottom.jsp"></jsp:include>
-</body>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-	integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-	crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script type="text/javascript" src="${base}/js/index.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-		setTimeout(function() {
-			$(".carousel-caption-css").show();
-		}, 2000);
-	});
-	$(document).ready(function() {
-		document.getElementById("heart").onclick = function() {
-			document.querySelector(".fa-gratipay").style.color = "#E74C3C";
-		};
-	});
-
-	// hÃ m responsive
-
-	function myFunction(x) {
-		if (x.matches) { // If media query matches
-			var swiper = new Swiper(".mySwiper", {
-				slidesPerView : 1,
-				spaceBetween : 30,
-				slidesPerGroup : 4,
-				loop : true,
-				loopFillGroupWithBlank : true,
-				pagination : {
-					el : ".swiper-pagination",
-					clickable : true,
-				},
-				navigation : {
-					nextEl : ".swiper-button-next",
-					prevEl : ".swiper-button-prev",
-				},
-			});
-
-			var swiper = new Swiper(".mySwiper-1", {
-				slidesPerView : 1,
-				spaceBetween : 30,
-				slidesPerGroup : 1,
-				loop : true,
-				loopFillGroupWithBlank : true,
-				pagination : {
-					el : ".swiper-pagination",
-					clickable : true,
-				},
-				navigation : {
-					nextEl : ".swiper-button-next-1",
-					prevEl : ".swiper-button-prev-1",
-				},
-			});
-		} else {
-			var swiper = new Swiper(".mySwiper", {
-				slidesPerView : 4,
-				spaceBetween : 30,
-				slidesPerGroup : 4,
-				loop : true,
-				loopFillGroupWithBlank : true,
-				pagination : {
-					el : ".swiper-pagination",
-					clickable : true,
-				},
-				navigation : {
-					nextEl : ".swiper-button-next",
-					prevEl : ".swiper-button-prev",
-				},
-			});
-
-			var swiper = new Swiper(".mySwiper-1", {
-				slidesPerView : 1,
-				spaceBetween : 30,
-				slidesPerGroup : 1,
-				loop : true,
-				loopFillGroupWithBlank : true,
-				pagination : {
-					el : ".swiper-pagination",
-					clickable : true,
-				},
-				navigation : {
-					nextEl : ".swiper-button-next-1",
-					prevEl : ".swiper-button-prev-1",
-				},
-			});
-		}
-	}
-
-	var x = window.matchMedia("(max-width: 1000px)")
-	myFunction(x) // Call listener function at run time
-	x.addListener(myFunction) // Attach listener function on state changes
-</script>
+			</div>
+			<jsp:include page="/WEB-INF/views/user/layout/Footer.jsp"></jsp:include>
 </html>

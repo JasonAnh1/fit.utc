@@ -1,0 +1,42 @@
+/*update class 17/03
+*/
+
+.container-news{
+   width:84%;
+   margin-left: 8%;
+}
+
+
+.card-news{
+ height: 150px;
+ width: 100%;
+}
+
+
+.card-news-bag{
+  padding-bottom: 10px;
+}
+
+.more-info{
+  height: 30px;
+  background-color: #187bcd;
+  padding-top: 5px;
+  font-family: 'Rajdhani', sans-serif;
+  cursor: pointer;
+}
+
+.link-to-go{
+  text-decoration: none;
+  color:  black;
+}
+
+@media screen and (max-width:  770px){
+body{
+    
+}
+  .card-news{
+    height: 150px;
+    max-width: 350px;
+  }
+
+}

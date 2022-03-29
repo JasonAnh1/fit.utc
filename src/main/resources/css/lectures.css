@@ -1,0 +1,19 @@
+body{
+    background-color: #F5F5F5 ;
+}
+
+.selection{
+    width: 80%;
+}
+
+.searching{
+    display: flex;
+}
+.searching input{
+    width: 70%;
+}
+
+@media all and (max-width: 1000px){
+    .searching{
+    }
+}

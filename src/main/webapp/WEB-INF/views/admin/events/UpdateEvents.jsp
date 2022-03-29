@@ -38,35 +38,43 @@
 									placeholder="Enter title" name="title" path="title"></sf:input>
 							</div>
 						</div>
-						<h4>Vui lòng tham khảo lịch trước khi điền</h4>
-						<div class="form-group">
-							<label class="control-label col-sm-2"> Nhập ngày diễn ra sự kiện:(Không được để trống)</label>
-							<div class="col-sm-10">
-								<sf:input type="number" class="form-control" id="shortDes"
-									placeholder="Enter shortDes" name="shortDes" path="day"></sf:input>
-							</div>
+						<h4>Ngày giờ diễn ra sự kiện</h4>
+						              <div class="form-group" style="margin-left: 8.5%">
+
+                        <label class="control-label col-sm-1">Ngày : </label>
+                        <div class="col-sm-2">
+                            <sf:input type="number" class="form-control" max="32" id="shortDes"
+									placeholder="Enter day" name="shortDes" path="day"></sf:input>
+                        </div>
+
+
+                        <label class="control-label col-sm-1">tháng : </label>
+                        <div class="col-sm-2">
+                            <sf:input type="number" class="form-control" max="12" id="shortDes"
+									placeholder="Enter month" name="shortDes" path="month"></sf:input>
+
+                    </div>
+
+                        <label class="control-label col-sm-1">giờ: </label>
+                        <div class="col-sm-2">
+                            <sf:input type="number" class="form-control" id="shortDes" max="24"
+									placeholder="Enter hour" name="shortDes" path="hour"></sf:input>
+
+                    </div>
+                    <label class="control-label col-sm-1">phút: </label>
+                        <div class="col-sm-2">
+                            <sf:input type="number" class="form-control" id="shortDes" max="60"
+									placeholder="Enter minutes" name="shortDes" path="minutes"></sf:input>
+
+                    </div>
+                </div>
+					<div class="form-group">
+						<label class="control-label col-sm-2"> Nhập nơi (địa chỉ) diễn ra sự kiện:(Không được để trống)</label>
+						<div class="col-sm-10">
+							<sf:input type="text" class="form-control" id="shortDes"
+									  placeholder="Enter address" name="shortDes" path="address"></sf:input>
 						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2"> Nhập tháng diễn ra sự kiện:(Không được để trống nhập từ 1 đến 12)</label>
-							<div class="col-sm-10">
-								<sf:input type="number" class="form-control" id="shortDes"
-									placeholder="Enter shortDes" name="shortDes" path="month"></sf:input>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2"> Nhập giờ diễn ra sự kiện:(Không được để trống nhập them khung 24h)</label>
-							<div class="col-sm-10">
-								<sf:input type="number" class="form-control" id="shortDes"
-									placeholder="Enter shortDes" name="shortDes" path="hour"></sf:input>
-							</div>
-						</div>
-						<div class="form-group">
-							<label class="control-label col-sm-2"> Nhập phút diễn ra sự kiện:(Không được để trống nên nhập theo 15 30 phút để có hiển thị tốt nhất)</label>
-							<div class="col-sm-10">
-								<sf:input type="number" class="form-control" id="shortDes"
-									placeholder="Enter shortDes" name="shortDes" path="minutes"></sf:input>
-							</div>
-						</div>
+					</div>
 						<div class="form-group">
 							<label class="control-label col-sm-2"> Chi tiết sự kiện:(Không được để trống)</label>
 							<div class="col-sm-10">

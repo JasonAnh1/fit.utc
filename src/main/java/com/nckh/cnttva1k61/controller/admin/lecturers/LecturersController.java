@@ -5,6 +5,7 @@ import com.nckh.cnttva1k61.dto.LecturersSearchModel;
 import com.nckh.cnttva1k61.entities.Events;
 import com.nckh.cnttva1k61.entities.Lecturers;
 import com.nckh.cnttva1k61.entities.News;
+import com.nckh.cnttva1k61.services.DepartmentService;
 import com.nckh.cnttva1k61.services.LecturersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,23 +23,29 @@ import java.io.IOException;
 public class LecturersController extends BaseController {
     @Autowired
     LecturersService lecturersService;
-
+    @Autowired
+    DepartmentService departmentService;
 @RequestMapping(value = {"admin/listlecturers"},method = RequestMethod.GET)
 private String getLectures(final Model model, final HttpServletRequest request,
                            final HttpServletResponse response)throws IOException
 {
     String keyword = request.getParameter("keyword");
+    String faculty = request.getParameter("faculty");
     LecturersSearchModel lecturersSearchModel = new LecturersSearchModel();
     lecturersSearchModel.keyword = keyword;
+    lecturersSearchModel.faculty = faculty;
+    lecturersSearchModel.departmentId = super.getInteger(request,"departmentId");
+    model.addAttribute("department", departmentService.findAll());
     model.addAttribute("lecturersSearch", lecturersService.search(lecturersSearchModel));
     model.addAttribute("lecturersSearchModel",lecturersSearchModel);
+
     return "admin/lecturers/ListLecturers";
 }
     @RequestMapping(value = { "/admin/addLecturer" }, method = RequestMethod.GET)
     public String get_addproduct(final Model model, final HttpServletRequest request,
                                  final HttpServletResponse response) {
         model.addAttribute("lecturer", new Lecturers());
-
+        model.addAttribute("department", departmentService.findAll());
         return "admin/lecturers/AddLecturers";
     }
 
@@ -67,6 +74,7 @@ private String getLectures(final Model model, final HttpServletRequest request,
         Integer id = Integer.parseInt(request.getParameter("cid"));
         lecturers = lecturersService.getById(id);
         model.addAttribute("lecturer", lecturers);
+        model.addAttribute("department", departmentService.findAll());
         return "admin/lecturers/AddLecturers";
     }
 

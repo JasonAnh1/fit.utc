@@ -18,7 +18,7 @@ public class BaseEntity {
 	private Integer id;
     @BooleanFlag
 	@Column(name = "status", nullable = true)
-	private Boolean status = Boolean.FALSE;
+	private Boolean status = Boolean.TRUE;
 
 	@Column(name = "created_by",length = 50, nullable = true)
 	private String createdBy;

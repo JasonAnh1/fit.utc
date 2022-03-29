@@ -1,0 +1,119 @@
+.people-said{
+  background-color: #404040;
+}
+
+.people-said h1{
+  color: white;
+  text-align: center;
+}
+
+.people-said .swiper-wrapper{
+  background-color: #404040;
+  height: 400px;
+}
+
+.people-said .swiper-slide{
+  background-color: #404040;
+}
+
+.so-scroll-bag{
+  width: 80%;
+  margin-left: 10%;
+}
+
+.people-said .so-scroll-bag .so-img-bag img{
+  border-radius: 50px;
+  padding-top: 10;
+  height: 160px;
+  width: 115px;
+}
+
+.so-img-bag{
+  display: flex;
+}
+
+.so-img-line{
+  height: 150px;
+  width: 5px;
+  background-color: white;
+  position: relative;
+  top: 15px;
+  left: 25px;
+}
+
+.so-scroll-div{
+  top: 20px;
+  position: relative;
+  height: 250px;
+  color: white;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+/* custom scroll bar */
+  .so-scroll-div::-webkit-scrollbar {
+    width: 10px;
+  }
+  .so-scroll-div::-webkit-scrollbar-track {
+    background: #242526;
+  }
+  .so-scroll-div::-webkit-scrollbar-thumb {
+    background: #3A3B3C;
+  }
+
+
+/*
+.so-scroll-div::-webkit-scrollbar-thumb {
+  background-color: red;
+}
+.so-scroll-div::-webkit-track {
+  background-color: green;
+}
+*/
+
+.so-info-name{
+  text-align: left;
+  padding-top: 20px;
+  padding-left: 18%;
+  color: white;
+}
+
+.so-info-name p{
+  font-size: 16px;
+  position: relative;
+  top: -10px;
+}
+
+
+
+
+
+
+
+
+
+
+/* media query*/
+@media screen and (max-width:  1200px){
+ 
+.so-img-line{
+  background-color: white;
+ }
+}
+
+@media screen and (max-width: 1000px) {
+ 
+  .so-img-line{
+  background-color: #404040;
+  }
+  
+}
+
+@media (max-width:  760px){
+
+ .so-img-bag{
+  padding-left: 35%;
+ }
+
+}
+

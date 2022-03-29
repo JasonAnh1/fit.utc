@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-height: 100%;
+    margin: auto;
+    padding: 0;
+}
+.container-header{
+    width: 98%;
+    margin-left: 1%;
+}
+
+
+
+
+
+
+
+
+
+.nav-arrow a{
+    position: relative;
+    top: -10px;
+}
+
+.nav-arrow label{
+    position: relative;
+    right: 40px;
+    top: 6px;
+    color: blue;
+    font-size: 10px;
+}
+
+.right-col-line{
+    border-right: 0.5px solid #808080;
+}
+
+
+/* box container */
+.container-content{
+    width: 80%;
+    margin-left: 10%;
+}
+
+
+/* phần thẻ link */
+.link-tag{
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+}
+
+.link-tag a{
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    padding: 5px;
+}
+
+
+/* tạo mũi tên diều hướng */
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.container-left-right{
+    display: flex;
+
+}
+.blue-line-m{
+    height: 4px;
+    background-color:  #187bcd;
+    width: 35px;
+}
+
+.left-content{
+    width: 90%;
+    height: 200px;
+    margin-right: 5px;
+}
+.left-content .left-content-up img{
+    width: 45%;
+    height: auto;
+}
+.left-content-up-text{
+    width: 55%;
+    float: right;
+    padding-left: 20px;
+}
+.left-content .left-content-up .left-content-up-text p{
+    padding: 5px;
+}
+.right-content{
+    width: 20%;
+    height: auto;
+
+}
+.left-content .left-content-down{
+    text-align: center;
+
+}
+.left-content .left-content-down i{
+    padding: 10px;
+    font-size: 26px;
+}
+
+/* right content*/
+.right-content .right-content-event ul li{
+    position: relative;
+    right: 37px;
+    padding: 7px;
+    list-style: none;
+}
+.right-content .right-content-event hr{
+    position: relative;
+    right: 37px;
+    opacity: 0.1;
+}
+
+.right-content-event ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+/*responsive cho điện thoại */
+
+
+@media all and (max-width: 800px){
+
+    .left-content .left-content-up{
+        display: block;
+    }
+    .left-content{
+        width: 90%;
+        margin-left: 5%;
+        display: block;
+        float: none;
+        position: static;
+        height: auto;
+    }
+
+    .left-content .left-content-up img{
+        width: 100%;
+    }
+    .left-content .left-content-up p{
+        text-align: center !important;
+    }
+
+    .left-content .left-content-up .blue-line-m{
+        display: none;
+    }
+
+    .link-tag{
+        text-align: center;
+    }
+    .container-left-right{
+        display: block;
+    }
+    .left-content-up-text{
+        width: 100%;
+        text-align: center;
+        float: none;
+        height: auto;
+        display: block;
+    }
+
+    .right-content{
+        display: flex;
+        width: 100%;
+    }
+
+    .right-content .right-content-event hr{
+        position: static !important;
+    }
+    .right-content .right-content-event ul li{
+        position: static !important;
+    }
+
+    /*tên trường*/
+    .Uni_name{
+        position: absolute;
+        left: 30%;
+        font-size: 16px;
+    }
+
+    .left-content-middle{
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+

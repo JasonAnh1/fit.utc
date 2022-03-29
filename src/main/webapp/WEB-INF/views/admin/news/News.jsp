@@ -16,15 +16,22 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/admin/layout/sideBar.jsp"></jsp:include>
 			<div class="col-9">
-				<div class="h3 mt-5">Quản lý danh mục</div>
+				<div class="h3 mt-5">Quản lý tin tức</div>
 
 				<form action="${base}/admin/listNews" method="get">
-					<div class="input-group rounded w-25">
+					<div class="input-group rounded w-50">
 					<input type="hidden" id="page" name="page">
 						<input type="search" class="form-control rounded"
 							placeholder="Search" id="keyword" name="keyword"
 							aria-label="Search" aria-describedby="search-addon"
 							value="${newsSearchModel.keyword}" />
+							<select
+								name="categoryId" id="categoryId">
+								<option value="0">all</option>
+								<c:forEach items="${categories}" var="categories">
+									<option value="${categories.id}">${categories.name}</option>
+								</c:forEach>
+							</select>
 						<button type="submit" id="btnSearch" name="btnSearch"
 							value="Search" class="btn btn-primary">Seach</button>
 					</div>

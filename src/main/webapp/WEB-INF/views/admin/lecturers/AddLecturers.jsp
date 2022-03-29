@@ -32,6 +32,18 @@
                 <sf:hidden path="id"/>
                 <br>
                 <div class="form-group">
+                    <label class="control-label col-sm-2" for="name">Chọn bộ môn</label>
+
+                    <div class="col-sm-10">
+                        <sf:select path="department.id" class="form-control"
+                                   id="department">
+                            <sf:options items="${department}" itemValue="id"
+                                        itemLabel="name" />
+                        </sf:select>
+
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="control-label col-sm-2">Tên giảng viên: </label>
                     <div class="col-sm-10">
                         <sf:input type="text" class="form-control" id="name"
@@ -57,13 +69,6 @@
                     <div class="col-sm-10">
                         <sf:input type="text" class="form-control" id="email"
                                   placeholder="" name="email" path="email"></sf:input>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-sm-2">Khoa: </label>
-                    <div class="col-sm-10">
-                        <sf:input type="text" class="form-control" id="faculty"
-                                  placeholder="" name="faculty" path="faculty"></sf:input>
                     </div>
                 </div>
                 <div class="form-group">

@@ -60,10 +60,15 @@ public class LecturersService extends BaseService<Lecturers>{
         String sql = "SELECT * FROM tbl_lecturers p WHERE 1=1 ";
 
         if (searchModel != null) {
+            if (searchModel.departmentId != null && searchModel.departmentId > 0) {
+                sql += " and department_id =' " + searchModel.departmentId + " '";
+            }
             if (!StringUtils.isEmpty(searchModel.keyword)) {
                 sql += " and (p.name like '%" + searchModel.keyword + "%'" + " or p.introduce like '%"
                         + searchModel.keyword + "%' "+ " or p.position like '%"
                         + searchModel.keyword + "%' " + " or p.teaching like '%" + searchModel.keyword + "%')";
+            }if(searchModel.faculty != null ){
+                sql+= " and (p.faculty = '" + searchModel.faculty + "')";
             }
         }
         sql += "ORDER BY p.name";

@@ -32,4 +32,5 @@ public class ListNewsController extends BaseController {
 		model.addAttribute("searchModel", newsSearchModel);
 		return "admin/news/News";
 	}
+
 }

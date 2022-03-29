@@ -143,7 +143,7 @@ public class NewsService extends BaseService<News> {
 
 		if (searchModel != null) {
 			if (searchModel.categoryId != null && searchModel.categoryId > 0) {
-				sql += " and category_id = " + searchModel.categoryId;
+				sql += " and category_id =' " + searchModel.categoryId + " '";
 			}
 
 			if (!StringUtils.isEmpty(searchModel.seo)) {
@@ -158,6 +158,7 @@ public class NewsService extends BaseService<News> {
 			}
 		}
                 sql += "ORDER BY p.created_date DESC";
+        
 		return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
 	}
 
@@ -183,7 +184,7 @@ public class NewsService extends BaseService<News> {
 		return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
 	}
 	public PagerData<News> FourLastNews(NewsSearchModel searchModel) {
-		String sql = "SELECT * FROM tbl_news ORDER BY created_date DESC LIMIT 4";
+		String sql = "SELECT * FROM tbl_news P WHERE NOT P.category_id = 132 XOR P.category_id = 133 ORDER BY created_date DESC LIMIT 4";
 		return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
 	}
 
@@ -193,12 +194,15 @@ public class NewsService extends BaseService<News> {
 	}
 
 	public PagerData<News> TwoLastEducateNews(NewsSearchModel searchModel) {
-		String sql = "SELECT * FROM tbl_news  JOIN tbl_category  ON tbl_category.id = tbl_news.category_id  WHERE tbl_category.name = 'Đại Học' OR tbl_category.name = 'Đào Tạo' OR tbl_category.name = 'Sau Đại Học'  ORDER BY tbl_news.created_date DESC LIMIT 2";
+		String sql = "SELECT * FROM tbl_news  JOIN tbl_category  ON tbl_category.id = tbl_news.category_id  WHERE tbl_category.name = 'Hệ đại Học' OR tbl_category.name = 'Hệ tiến sỹ'  OR tbl_category.name = 'Đào Tạo' OR tbl_category.name = 'Hệ Thạc Sỹ'  ORDER BY tbl_news.created_date DESC LIMIT 2";
 		return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
 	}
-
+	public PagerData<News> OldStudent(NewsSearchModel searchModel) {
+		String sql = "SELECT * FROM tbl_news  JOIN tbl_category  ON tbl_category.id = tbl_news.category_id  WHERE tbl_category.name = 'Cựu Sinh Viên'  ORDER BY tbl_news.created_date DESC ";
+		return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
+	}
 	public PagerData<News> TwoLastContactNews(NewsSearchModel searchModel) {
-		String sql = "SELECT * FROM tbl_news  JOIN tbl_category  ON tbl_category.id = tbl_news.category_id  WHERE tbl_category.name = 'Đối tác' OR tbl_category.name = 'Đào Tạo' OR tbl_category.name = 'Sau Đại Học'  ORDER BY tbl_news.created_date DESC LIMIT 2";
+		String sql = "SELECT * FROM tbl_news  JOIN tbl_category  ON tbl_category.id = tbl_news.category_id  WHERE tbl_category.name = 'Hợp tác đối ngoại' OR tbl_category.name = 'Hợp tác với khối Doanh nghiệp' OR tbl_category.name = 'Hợp tác với khối hàn lâm'  ORDER BY tbl_news.created_date DESC LIMIT 2";
 		return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
 	}
 

@@ -84,7 +84,7 @@
 					</div>
 					<div class="form-group">
 						<label class="control-label col-sm-2" for="fileProductPictures">Các
-							ảnh trong bài viết(Có thể nhập nhiều ảnh):</label>
+							file tải về trong bài viết(Có thể nhập nhiều file):</label>
 						<div class="col-sm-10">
 							<input id="fileNewsPictures" name="newsPictures" type="file"
 								class="form-control-file" multiple="multiple">

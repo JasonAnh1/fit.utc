@@ -40,8 +40,10 @@
                         <th>Email</th>
                         <th>Sdt</th>
                         <th>Thông tin chung</th>
+                        <td>Trạng thái</td>
                         <th>Edit</th>
                         <th>Delete</th>
+                        <th>Active</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -55,9 +57,11 @@
                             <td>${o.email}</td>
                             <td>${o.phoneNumber}</td>
                             <td>${o.description}</td>
-                            <td><a class="btn-info btn" href="${base}/admin/updateForm?cid=${o.id}">Cập nhật</a></td>
-                            <td><a class="btn-danger btn" href="${base}/admin/deleteForm?id=${o.id}">Xóa</a></td>
-
+                            <td>${o.status == true ?                '<p style="color:  #0d6efd ; font-weight: 700;">Hoạt động</p>':
+                                                                                '<p style="color:#F70211; font-weight: 700;">Dừng hoạt Động</p>'}</td>
+                            <td><a class="btn-info btn" href="${base}/admin/updateOldStudent?cid=${o.id}">Cập nhật</a></td>
+                            <td><a class="btn-danger btn"onclick="deleteOldStudent(${o.id})">Xóa</a></td>
+							<td><a class="btn-success btn"onclick="activeOldStudent(${o.id})">Kích hoạt lại</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

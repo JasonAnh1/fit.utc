@@ -1,0 +1,174 @@
+.blue-line{
+    height: 7px;
+    background-color: #187bcd;
+    position: relative;
+    top: 5px;
+    z-index: 10000000;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.nav-arrow{
+    display: flex;
+    height: 100%;
+    width: auto;
+    border-left: 0.5px solid #808080;
+}
+
+.nav-arrow a{
+    position: relative;
+    top: -10px;
+}
+
+.nav-arrow label{
+    position: relative;
+    right: 40px;
+    top: 6px;
+    color: blue;
+    font-size: 10px;
+}
+
+.right-col-line{
+    border-right: 0.5px solid #808080;
+}
+
+
+.text-content a{
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+.detail{
+    padding: 5px;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+@media all and (max-width: 1300px){
+
+
+    .blue-line{
+        display: none;
+    }
+
+    .nav-size{
+        height: auto;
+        padding-bottom: 15px;
+    }
+
+    .nav-arrow{
+        border-left: none;
+    }
+    .right-col-line{
+        border-right: none;
+    }
+
+
+
+}
+
+
+/* phần giao diện trang */
+
+.container-box{
+    width: 84%;
+    margin-left: 8%;
+}
+
+
+.link-tag{
+    width: 100%;
+    padding: 20px 0px 20px 0px;
+}
+
+.link-tag a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    padding: 5px;
+}
+
+
+/* tạo mũi tên diều hướng */
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+
+
+
+/* chỉnh box-mid */
+
+
+
+
+.container-box-mid{
+    display: flex;
+}
+
+
+
+
+.main-content{
+    padding-top: 20px;
+    width: 100%;
+}
+
+.main-left-content{
+    width: 40%;
+}
+
+.main-right-content{
+    width: 10%;
+    height: 200px;
+    background-color: yellow;
+    float: right;
+}
+
+.box-m-right{
+    height: 200px;
+    width: 100%;
+}
+
+.box-m-bottom{
+}
+
+.box-m-bottom .pagination{
+    margin-left: 12%;
+}
+
+.box-m-bottom .pagination li a{
+    font-size: 24px;
+    padding: 8px;
+}
+
+@media all and (max-width: 1200px){
+    .box-m-left{
+        display: none;
+    }
+    .text-content {
+        text-align: center;
+    }
+}

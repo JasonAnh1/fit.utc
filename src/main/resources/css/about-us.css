@@ -1,0 +1,30 @@
+.about-us {
+	background-color: #FFFFA7;
+}
+
+.about-us-bag {
+	width: 99%;
+	padding-left: 13%;
+	padding-top: 20px;
+}
+
+.about-us h1 {
+	text-align: center; color : black;
+	padding-top: 30px;
+	color: black;
+}
+
+.about-us .about-us-bag h1 {
+	color: black;
+	font-size: 46px;
+}
+
+.about-us .size-text {
+	font-size: 20px;
+	position: relative;
+	top: 40px;
+}
+
+.about-us-bag-el {
+	padding: 10px;
+}

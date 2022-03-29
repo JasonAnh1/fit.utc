@@ -4,6 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
          pageEncoding="utf-8" %>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+      integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"/>
 <div class="col-3 bg-dark ">
     <div
             class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark sidebar"
@@ -20,6 +23,7 @@
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
+            <li><i class="fa-solid fa-newspaper"></i> &nbsp Tin tức - Bài Viết - Sự kiện</li>
             <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle active"
@@ -59,6 +63,37 @@
                     </ul>
                 </div>
             </li>
+
+
+
+
+
+            <li><i class="fa-solid fa-database"></i> &nbsp Lưu trữ thông tin</li>
+            <li class="nav-item">
+            <div class="dropdown">
+                    <button type="button" class="btn btn-dark dropdown-toggle"
+                            data-bs-toggle="dropdown">Quản lý bộ môn
+                    </button>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item  text-white" href="${base}/admin/listDepartment">Danh
+                            Bộ môn</a></li>
+                        <li><a class="dropdown-item  text-white" href="${base}/admin/addDepartment">Thêm bộ môn</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-dark dropdown-toggle"
+                            data-bs-toggle="dropdown">Quản lý giảng viên
+                    </button>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item  text-white" href="${base}/admin/listlecturers">Danh
+                            sách giảng viên</a></li>
+                        <li><a class="dropdown-item  text-white" href="${base}/admin/addLecturer">Thêm giảng viên</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </li>
             <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle"
@@ -77,16 +112,31 @@
             <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle"
-                            data-bs-toggle="dropdown">Quản lý giảng viên
+                            data-bs-toggle="dropdown">Quản lý cựu sinh viên
                     </button>
                     <ul class="dropdown-menu bg-dark">
-                                <li><a class="dropdown-item  text-white" href="${base}/admin/listlecturers">Danh
-                                    sách giảng viên</a></li>
-                        <li><a class="dropdown-item  text-white" href="${base}/admin/addLecturer">Thêm giảng viên</a></li>
+                        <li><a class="dropdown-item  text-white"
+                               href="${base}/admin/listOldStudent">Danh sách</a></li>
+                        <li><a class="dropdown-item  text-white"
+                               href="${base}/admin/addOldStudent">Thêm</a></li>
                     </ul>
                 </div>
-
             </li>
+
+            <li class="nav-item">
+                <div class="dropdown">
+                    <button type="button" class="btn btn-dark dropdown-toggle"
+                            data-bs-toggle="dropdown">Quản lý biểu mẫu
+                    </button>
+                    <ul class="dropdown-menu bg-dark">
+                        <li><a class="dropdown-item  text-white"
+                               href="${base}/admin/listForms">Danh sách</a></li>
+                        <li><a class="dropdown-item  text-white"
+                               href="${base}/admin/addForm">Thêm</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><i class="fa-solid fa-display"></i> &nbsp Giao diện</li>
             <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle"
@@ -103,40 +153,43 @@
             <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle"
-                            data-bs-toggle="dropdown">Quản lý biểu mẫu
+                            data-bs-toggle="dropdown">Nói về Fit Utc
                     </button>
                     <ul class="dropdown-menu bg-dark">
                         <li><a class="dropdown-item  text-white"
-                               href="${base}/admin/listForms">Danh sách</a></li>
+                               href="${base}/admin/aboutFitutc">Danh sách</a></li>
                         <li><a class="dropdown-item  text-white"
-                               href="${base}/admin/addForm">Thêm</a></li>
+                               href="${base}/admin/addAboutfitutc">Thêm</a></li>
                     </ul>
                 </div>
             </li>
             <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle"
-                            data-bs-toggle="dropdown">Quản lý cựu sinh viên
+                            data-bs-toggle="dropdown">Thống kê
                     </button>
                     <ul class="dropdown-menu bg-dark">
                         <li><a class="dropdown-item  text-white"
-                               href="${base}/admin/listOldStudent">Danh sách</a></li>
+                               href="${base}/admin/Statistic">Danh sách</a></li>
                         <li><a class="dropdown-item  text-white"
-                               href="${base}/admin/addOldStudent">Thêm</a></li>
+                               href="${base}/admin/addStatistic">Thêm</a></li>
                     </ul>
                 </div>
             </li>
-            <!-- 	<li class="nav-item">
+
+            <li class="nav-item">
                 <div class="dropdown">
                     <button type="button" class="btn btn-dark dropdown-toggle"
-                        data-bs-toggle="dropdown">Lịch sử</button>
+                            data-bs-toggle="dropdown">Quản lý Nhà tài trợ - Đối tác
+                    </button>
                     <ul class="dropdown-menu bg-dark">
-                        <li><a class="dropdown-item  text-white" href="#">Danh
-                                sách</a></li>
-                        <li><a class="dropdown-item  text-white" href="#">Thêm</a></li>
+                        <li><a class="dropdown-item  text-white"
+                               href="${base}/admin/listSponsor">Danh sách</a></li>
+                        <li><a class="dropdown-item  text-white"
+                               href="${base}/admin/addSponsor">Thêm</a></li>
                     </ul>
                 </div>
-            </li> -->
+            </li>
         </ul>
         <hr>
         <div class="dropdown">

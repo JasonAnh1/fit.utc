@@ -1,0 +1,40 @@
+.container-figure{
+    padding-top: 20px;
+    width: 90%;
+    margin-left: 5%;
+
+}
+
+.container-figure a{
+    text-decoration: none;
+
+}
+
+.container-figure figure {
+    background: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    max-width: 19%;
+    margin-left: 0.5%;
+}
+
+.container-figure figure img{
+    width: 100%;
+    padding: 5px;
+    padding-bottom: 0px;
+}
+
+.container-figure figure figcaption{
+
+    padding: 10px 3px 10px 3px;
+    font-size: 18px;
+    font-weight: 650;
+    color: blue;
+}
+
+@media all and (max-width: 850px){
+    .container-figure figure {
+        background: white;
+        max-width: 32%;
+        margin-left: 0.5%;
+    }
+}

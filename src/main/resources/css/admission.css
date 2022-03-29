@@ -1,0 +1,34 @@
+.admission-and-educate{
+  width: 80%;
+  margin-left: 10%;
+  text-align: center;
+}
+
+.admission-and-educate-title{
+  padding: 10px;
+}
+
+.admission-and-educate-title p{
+  padding: 1% 20% 0% 20%;
+}
+
+.admission-container{
+  margin-left: 1%;
+  width: 98%;
+}
+
+.admission-and-educate-img{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  display: flex;
+  background-color: white;
+}
+
+.admission-and-educate-img img{
+  cursor: pointer;
+  max-height: 250px;
+  width: 35%;
+}
+
+.admission-and-educate-img p{
+  padding: 0 5px 0 5px;
+}

@@ -14,12 +14,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.nckh.cnttva1k61.controller.BaseController;
 import com.nckh.cnttva1k61.entities.News;
 import com.nckh.cnttva1k61.services.CategoryService;
 import com.nckh.cnttva1k61.services.NewsService;
 
 @Controller
-public class AddNewsController {
+public class AddNewsController extends BaseController {
 	@Autowired
 	private CategoryService categoryService;
 	@Autowired

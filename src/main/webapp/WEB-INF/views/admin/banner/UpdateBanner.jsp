@@ -20,7 +20,7 @@
 		<div class="row">
 			<jsp:include page="/WEB-INF/views/admin/layout/sideBar.jsp"></jsp:include>
 			<div class="col-9">
-				<h4>Thêm baneer</h4>
+				<h4>Thêm Banner</h4>
 				<br>
 				<sf:form class="form-horizontal" action="${base}/admin/addBanner" method="POST" modelAttribute="banner" enctype="multipart/form-data" >
 				<sf:hidden path="id"/>	
@@ -57,13 +57,13 @@
 									placeholder="Enter details" name="details" path="details"></sf:textarea>
 							</div>
 						</div>
-						<div class="form-group">
+<!-- 						<div class="form-group">
 							<label class="control-label col-sm-2" for="fileProductPictures">Các ảnh trong bài viết(Có thể nhập nhiều ảnh):</label>
 							<div class="col-sm-10">
 								<input id="fileNewsPictures" name="newsPictures"
 									type="file" class="form-control-file" multiple="multiple">
 							</div>
-						</div>
+						</div> -->
 						<div class="form-group">
 							<label class="control-label col-sm-2" for="fileProductAvatar">Banner hiển thị trên trang chủ:</label>
 							<div class="col-sm-10">
