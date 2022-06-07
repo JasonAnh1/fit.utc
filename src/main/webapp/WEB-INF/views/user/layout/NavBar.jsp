@@ -16,9 +16,12 @@
 	</div>
 	<!-- 2. UTC's name -->
 	<div class="col-7 box b utc-name">
-		<h3>Trường Đại Học Giao Thông Vận Tải</h3>
-		<h3>Khoa Công Nghệ Thông Tin</h3>
+		 <div class="utc-name-l0">
+         <h3 class="utc-name-n1" data-text="TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN">TRƯỜNG ĐẠI HỌC GIAO THÔNG VẬN</h3>
+         <h3 data-text="KHOA CÔNG NGHỆ THÔNG TIN">KHOA CÔNG NGHỆ THÔNG TIN</h3>  
+        </div>
 	</div>
+	 
 	<!-- 3. Login functional -->
 	<div class="col-3 box log-c">
 		<!-- in here we have 2 section: "search-bar" "login" -->
@@ -74,6 +77,9 @@
 								<c:if test="${cate1.getName() == 'Giới thiệu'}">
 									<li><a href="${base}/Userlistlecturers">Danh sách
 											cán bộ</a></li>
+									<c:forEach items="${Department.data}" var="De">
+										<li><a href="${base}/Department/${De.seo}">${De.name}</a></li>
+									</c:forEach>
 								</c:if>
 								<c:if test="${cate1.getName() == 'Sinh viên'}">
 									<li><a href="${base}/form">Biểu mẫu sinh viên</a></li>
@@ -86,41 +92,3 @@
 			class="fa fa-bars"></i></label>
 	</div>
 </nav>
-
-
-
-<%--<div class="nav-size">--%>
-<%--	<nav>--%>
-<%--		<div style="color: #464646;">UTC</div>--%>
-<%--		<label for="btn" class="icon"> <span class="fa fa-bars"></span>--%>
-<%--		</label> <input type="checkbox" id="btn">--%>
-<%--		<ul>--%>
-<%--			<c:forEach items="${categories}" var="cate1" begin="0" end="0">--%>
-<%--				<li>--%>
-<%--					<div class="nav-arrow">--%>
-<%--						<a href="${base}/index" style="display: block;">${cate1.name}</a>--%>
-<%--					</div>--%>
-<%--				</li>--%>
-<%--			</c:forEach>--%>
-<%--			<c:forEach items="${categories}" var="cate2" begin="1" end="8">--%>
-<%--				<li>--%>
-<%--					<div class="nav-arrow">--%>
-<%--						<a href="${base }/category/${cate2.id}" style="display: block;">${cate2.name}</a>--%>
-<%--						<label for="btn-${cate2.id}" class="show"><i--%>
-<%--							class="fas fa-caret-down"--%>
-<%--							style="user-select: auto; color: white; margin-left: 10px;"></i></label>--%>
-<%--					</div> <input type="checkbox" id="btn-${cate2.id}">--%>
-
-<%--					<ul>--%>
-<%--						<c:forEach items="${categories}" var="cate3">--%>
-<%--							<c:if test="${cate3.getParent().getId()==cate2.getId()}">--%>
-<%--								<li><a href="${base }/category/${cate3.id}">${cate3.getName()}</a></li>--%>
-<%--							</c:if>--%>
-<%--						</c:forEach>--%>
-<%--					</ul>--%>
-<%--				</li>--%>
-<%--			</c:forEach>--%>
-
-<%--		</ul>--%>
-<%--	</nav>--%>
-<%--</div>--%>

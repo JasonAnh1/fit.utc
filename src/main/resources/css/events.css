@@ -1,9 +1,8 @@
-/*swiper slide*/
-
 .event-news .event-news-title{
   text-align: center;
   padding: 20px;
-  font-family: 'Merriweather', serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500px;
 }
 .event-news .event-img{
   height: 55%;
@@ -42,7 +41,7 @@
   font-family: 'Nanum Myeongjo', serif;
 }
 .event-news .swiper {
-        width: 90%;
+        width: 80%;
         height: 65%;
         cursor: pointer;
 

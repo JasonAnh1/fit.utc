@@ -43,12 +43,25 @@ public class CategoryService extends BaseService<Categories> {
         String sql = "SELECT * FROM tbl_category    WHERE tbl_category.id ='" + searchModel.id + "'";
         return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
     }
+    
 
     public PagerData<Categories> findByChildId(CategorySearchModel searchModel) {
         String sql = "SELECT * FROM tbl_category    WHERE tbl_category.id ='" + searchModel.parent_id + "'";
         return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
     }
 
+    public PagerData<Categories> programCate(CategorySearchModel searchModel) {
+        String sql = "select * from tbl_category  t1,tbl_category t2\r\n"
+        		+ "where t1.parent_id = t2.id and t2.id in \r\n"
+        		+ "(select tbl_category.id  from tbl_category where tbl_category.name = 'Đào tạo');";
+        return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
+    }
+    public PagerData<Categories> contactCate(CategorySearchModel searchModel) {
+        String sql = "select * from tbl_category  t1,tbl_category t2\r\n"
+        		+ "where t1.parent_id = t2.id and t2.id in \r\n"
+        		+ "(select tbl_category.id  from tbl_category where tbl_category.name = 'Hợp tác đối ngoại');";
+        return runTransactQuerySQL(sql, searchModel == null ? 0 : searchModel.page);
+    }
     public Categories add(Categories p) {
 
         p.setSeo(Utilities.slugify(p.getName()));

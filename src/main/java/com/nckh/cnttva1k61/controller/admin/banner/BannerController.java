@@ -43,13 +43,13 @@ public class BannerController extends BaseController {
 		return "admin/banner/Banner";
 	}
 
-//	them
+
 
 	@RequestMapping(value = { "/admin/addBanner" }, method = RequestMethod.GET)
 	public String get_addBanner(final Model model, final HttpServletRequest request,
 			final HttpServletResponse response) {
 		model.addAttribute("banner", new Banner());
-//gui danh sach categories xuong view
+
 		model.addAttribute("categories", categoryService.findAll());
 
 		return "admin/banner/AddBanner";

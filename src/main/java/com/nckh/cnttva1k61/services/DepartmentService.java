@@ -6,8 +6,9 @@ import com.nckh.cnttva1k61.dto.DepartmentSearchModel;
 import com.nckh.cnttva1k61.entities.Categories;
 import com.nckh.cnttva1k61.entities.Department;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
-@Controller
+@Service
 public class DepartmentService extends BaseService<Department> {
 
     @Override

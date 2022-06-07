@@ -16,6 +16,7 @@ import com.nckh.cnttva1k61.entities.Categories;
 import com.nckh.cnttva1k61.entities.Role;
 import com.nckh.cnttva1k61.entities.User;
 import com.nckh.cnttva1k61.services.CategoryService;
+import com.nckh.cnttva1k61.services.DepartmentService;
 import com.nckh.cnttva1k61.services.RoleService;
 
 
@@ -24,6 +25,8 @@ public abstract class BaseController {
 	private CategoryService categoryService;
 	@Autowired
 	private RoleService roleService;
+	@Autowired
+	DepartmentService departmentService;
 
 	@ModelAttribute("userLogined")
 	public User getUserLogined() {

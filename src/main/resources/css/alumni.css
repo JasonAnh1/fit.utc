@@ -1,65 +1,66 @@
 .alumni{
-    text-align: center;
-    height: 600px;
+  text-align: center;
+  height: 600px;
 }
 
 .alumni .swiper {
-    width: 90%;
-    height: auto;
-    cursor: pointer;
-    padding-buttom: 10px;
-}
+        width: 80%;
+        height: auto;
+        cursor: pointer;
+        padding-bottom: 10px;
+      }
 .alumni .swiper-wrapper{
-    height: 90%;
+ height: 90%;
 }
 
 .alumni .swiper-slide {
-    text-align: center;
-    font-size: 18px;
-    background: #DADADA;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-
-}
+        text-align: center;
+        font-size: 18px;
+        background: #DADADA;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        
+      }
 
 .alumni .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
-}
+        display: block;
+        width: 100%;
+        height: 120%;
+        object-fit: cover;
+      }
+
 
 .alumni .alumni-tag{
-    color: white;
-    background-color: red;
-    position: relative;
-    top: -27px;
-    width: 40%;
-    z-index: 3;
+  color: white;
+  background-color: red;
+  position: relative;
+  top: -27px;
+  width: 40%;
+  z-index: 3;
 }
 
 .alumni .alumni-tag p{
-    position: relative ;
-    top: 2px;
-    left: -1px;
+  position: relative ;
+  top: 2px;
+  left: -1px;
 
 }
 
 .alumni .alumni-line{
-    height: 5px;
-    background-color: red;
-    position: relative;
-    top: -47px;
-    z-index: 2;
+  height: 5px;
+  background-color: red;
+  position: relative;
+  top: -47px;
+  z-index: 2;
 
 }
 
 /* margin để xóa khoảng trắng ở trên rồi đặt lại height cho nó */
 
 .alumni-text {
-    text-align: left;
-    padding-left: 5px;
-    margin-top: -40px;
-    height: 120px;
+  text-align: left;
+  padding-left: 5px;
+  margin-top: -40px;
+  height: 120px;
 
 }
 
@@ -82,64 +83,73 @@
 
 
 
+
+
+
 @media screen and (max-width:  1250px){
-    .alumni .alumni-tag p{
-        font-size: 12px;
-    }
+  .alumni .alumni-tag p{
+    font-size: 12px;
+  }
 
-    .alumni .alumni-tag{
-        color: white;
-        background-color: red;
-        position: relative;
-        top: -18px;
-        width: 40%;
-        z-index: 3;
-    }
+  .alumni .alumni-tag{
+  color: white;
+  background-color: red;
+  position: relative;
+  top: -18px;
+  width: 40%;
+  z-index: 3;
+}
 
-    .alumni .alumni-line{
-        height: 5px;
-        background-color: red;
-        position: relative;
-        top: -39px;
-        z-index: 2;
-
-    }
-    .alumni-text {
-        font-size: 16px;
-
-    }
+.alumni .alumni-line{
+  height: 5px;
+  background-color: red;
+  position: relative;
+  top: -39px;
+  z-index: 2;
 
 }
 
+.alumni-text {
+  font-size: 16px;
+
+}
+
+}
+
+
+
+
+
 @media screen and (max-width: 1000px) {
 
+ 
 
-
-    .alumni .swiper-slide img {
-
+  .alumni .swiper-slide img {
+        
         width: 100%;
         height:280px;
         object-fit: cover;
-    }
-    .alumni-text{
-        text-align: left;
-        padding-left: 5px;
-        position: relative;
-        top: 0px;
-    }
+      }
+  .alumni-text{
+    text-align: left;
+    padding-left: 5px;
+    position: relative;
+    top: 0px;
+  }
+  
+  .alumni .alumni-tag p{
+  position: relative ;
+  top: 0px;
+  left: 0px;
+  font-size: 15px;
 
-    .alumni .alumni-tag p{
-        position: relative ;
-        top: 0px;
-        left: 0px;
-        font-size: 15px;
+}
 
-    }
+.alumni-text {
+  font-size: 26px;
 
-    .alumni-text {
-        font-size: 26px;
+}
 
-    }
 
 
 }

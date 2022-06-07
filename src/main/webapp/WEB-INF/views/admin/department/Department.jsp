@@ -35,6 +35,7 @@
                         <th>id</th>
                         <th>Tên khoa</th>
                         <th>Giới thiệu ngắn</th>
+                  
                         <th>Edit</th>
                         <th>Delete</th>
                     </tr>
@@ -46,6 +47,7 @@
                             <td>${o.id}</td>
                             <td>${o.name}</td>
                             <td>${o.shortDes}</td>
+             
                             <td><a class="btn-info btn" href="${base}/admin/updateDepartment?cid=${o.id}">Cập nhật</a></td>
                             <td><a class="btn-danger btn" href="${base}/admin/deleteDepartment?id=${o.id}">Xóa</a></td>
                         </tr>
